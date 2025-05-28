@@ -1,0 +1,73 @@
+:root {
+  // Brand colors
+  --vp-c-brand: #409eff;
+  --vp-c-brand-light: #79bbff;
+  --vp-c-brand-lighter: #a0cfff;
+  --vp-c-brand-dark: #337ecc;
+  --vp-c-brand-darker: #2b69c9;
+
+  // Background colors
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-soft: #f9f9f9;
+  --vp-c-bg-mute: #f1f1f1;
+
+  // Text colors
+  --vp-c-text-1: #303133;
+  --vp-c-text-2: #606266;
+  --vp-c-text-3: #909399;
+  --vp-c-text-4: #c0c4cc;
+
+  // Border colors
+  --vp-c-border: #dcdfe6;
+  --vp-c-divider: #e4e7ed;
+
+  // Code block colors
+  --vp-code-block-bg: #f8f8f8;
+  --vp-code-copy-code-bg: rgba(125, 125, 125, 0.1);
+  --vp-code-copy-code-hover-bg: rgba(125, 125, 125, 0.2);
+
+  // Custom container colors
+  --vp-custom-block-tip-border: var(--vp-c-brand);
+  --vp-custom-block-tip-text: var(--vp-c-brand-darker);
+  --vp-custom-block-tip-bg: rgba(64, 158, 255, 0.1);
+  
+  --vp-custom-block-warning-border: #e6a23c;
+  --vp-custom-block-warning-text: #b88230;
+  --vp-custom-block-warning-bg: rgba(230, 162, 60, 0.1);
+  
+  --vp-custom-block-danger-border: #f56c6c;
+  --vp-custom-block-danger-text: #c45656;
+  --vp-custom-block-danger-bg: rgba(245, 108, 108, 0.1);
+  
+  --vp-custom-block-info-border: #909399;
+  --vp-custom-block-info-text: #767a82;
+  --vp-custom-block-info-bg: rgba(144, 147, 153, 0.1);
+
+  // Button colors
+  --vp-button-brand-border: var(--vp-c-brand);
+  --vp-button-brand-text: white;
+  --vp-button-brand-bg: var(--vp-c-brand);
+  --vp-button-brand-hover-border: var(--vp-c-brand-light);
+  --vp-button-brand-hover-text: white;
+  --vp-button-brand-hover-bg: var(--vp-c-brand-light);
+  --vp-button-brand-active-border: var(--vp-c-brand-dark);
+  --vp-button-brand-active-text: white;
+  --vp-button-brand-active-bg: var(--vp-c-brand-dark);
+}
+
+// Dark theme
+html.dark {
+  --vp-c-bg: #1a1a1a;
+  --vp-c-bg-soft: #242424;
+  --vp-c-bg-mute: #2c2c2c;
+  
+  --vp-c-text-1: #f0f0f0;
+  --vp-c-text-2: #e0e0e0;
+  --vp-c-text-3: #c0c0c0;
+  --vp-c-text-4: #909090;
+  
+  --vp-c-border: #3e3e42;
+  --vp-c-divider: #4e4e54;
+  
+  --vp-code-block-bg: #212121;
+} 

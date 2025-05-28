@@ -1,0 +1,112 @@
+@use '@theme/common/var.scss' as *;
+@use '@theme/mixins/mixins.scss' as *;
+
+@include b(input) {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  line-height: 1;
+  background-color: #fff;
+  border: 1px solid var(--my-border-color-base, #dcdfe6);
+  border-radius: var(--my-border-radius-base, 4px);
+  transition: all .2s cubic-bezier(.645, .045, .355, 1);
+
+  &:hover {
+    border-color: var(--my-border-color-hover, #c0c4cc);
+  }
+
+  &:focus-within {
+    border-color: var(--my-color-primary, #409eff);
+  }
+
+  @include m(small) {
+    height: 32px;
+    font-size: var(--my-font-size-small, 13px);
+  }
+
+  @include m(default) {
+    height: 40px;
+    font-size: var(--my-font-size-base, 14px);
+  }
+
+  @include m(large) {
+    height: 48px;
+    font-size: var(--my-font-size-large, 16px);
+  }
+
+  @include when(disabled) {
+    background-color: var(--my-bg-color-disabled, #f5f7fa);
+    border-color: var(--my-border-color-disabled, #e4e7ed);
+    color: var(--my-text-color-disabled, #c0c4cc);
+    cursor: not-allowed;
+
+    .#{$namespace}-input__inner {
+      cursor: not-allowed;
+    }
+  }
+
+  @include when(readonly) {
+    background-color: var(--my-bg-color-light, #f5f7fa);
+    border-color: var(--my-border-color-base, #dcdfe6);
+    cursor: not-allowed;
+
+    .#{$namespace}-input__inner {
+      cursor: not-allowed;
+    }
+  }
+
+  &__inner {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    padding: 0 12px;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--my-text-color-primary, #303133);
+    font-size: inherit;
+    line-height: inherit;
+
+    &::placeholder {
+      color: var(--my-text-color-placeholder, #c0c4cc);
+    }
+  }
+
+  &__prefix-icon,
+  &__suffix-icon,
+  &__clear-icon,
+  &__password-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 100%;
+    color: var(--my-text-color-secondary, #909399);
+    font-size: 16px;
+    cursor: pointer;
+    transition: color .2s cubic-bezier(.645, .045, .355, 1);
+
+    &:hover {
+      color: var(--my-text-color-primary, #303133);
+    }
+  }
+
+  &__prefix-icon {
+    margin-right: -12px;
+  }
+
+  &__suffix-icon,
+  &__clear-icon,
+  &__password-icon {
+    margin-left: -12px;
+  }
+
+  &__word-limit {
+    position: absolute;
+    right: 12px;
+    bottom: -20px;
+    font-size: var(--my-font-size-small, 12px);
+    color: var(--my-text-color-secondary, #909399);
+  }
+} 

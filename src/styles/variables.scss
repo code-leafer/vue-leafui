@@ -1,0 +1,92 @@
+// Colors
+$primary-color: #409eff;
+$success-color: #67c23a;
+$warning-color: #e6a23c;
+$danger-color: #f56c6c;
+$info-color: #909399;
+
+// 衍生颜色
+$primary-color-light: mix($primary-color, #fff, 80%);
+$success-color-light: mix($success-color, #fff, 80%);
+$warning-color-light: mix($warning-color, #fff, 80%);
+$danger-color-light: mix($danger-color, #fff, 80%);
+$info-color-light: mix($info-color, #fff, 80%);
+
+// Text colors
+$text-primary: #303133;
+$text-regular: #606266;
+$text-secondary: #909399;
+$text-placeholder: #c0c4cc;
+$text-disabled: #c0c4cc;
+
+// Border colors
+$border-color-base: #dcdfe6;
+$border-color-light: #e4e7ed;
+$border-color-lighter: #ebeef5;
+$border-color-extra-light: #f2f6fc;
+
+// Background colors
+$background-color-base: #f5f7fa;
+$background-color-light: #f5f7fa;
+$background-color-lighter: #fafafa;
+$bg-color: #ffffff;
+$bg-color-light: #f5f7fa;
+
+// Font sizes
+$font-size-extra-large: 20px;
+$font-size-large: 18px;
+$font-size-medium: 16px;
+$font-size-base: 14px;
+$font-size-small: 13px;
+$font-size-extra-small: 12px;
+
+// Border radius
+$border-radius-base: 4px;
+$border-radius-small: 2px;
+$border-radius-large: 8px;
+$border-radius-circle: 50%;
+
+// Spacing
+$spacing-base: 8px;
+$spacing-small: 4px;
+$spacing-large: 16px;
+$spacing-extra-large: 24px;
+
+// Z-index
+$z-index-normal: 1;
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;
+
+// Animation
+$transition-duration: 0.3s;
+$transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+// Shadows
+$box-shadow-base: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+$box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+$box-shadow-dark: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
+
+// Breakpoints
+$breakpoint-xs: 480px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1600px; 
+
+// 组件特定变量
+// Tooltip
+$tooltip-dark-bg: #303133;
+$tooltip-light-bg: #ffffff;
+$tooltip-color: #ffffff;
+$tooltip-padding: 10px;
+
+// Disabled
+$disabled-color-base: #bbb;
+$disabled-background-color: #f5f7fa;
+$disabled-border-color: #e4e7ed; 

@@ -1,0 +1,269 @@
+@use '@theme/common/var.scss' as *;
+@use '@theme/mixins/mixins.scss' as *;
+
+@include b(button) {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: var(--my-button-height, 32px);
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--my-button-text-color, #606266);
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.1s;
+  font-weight: var(--my-button-font-weight, 500);
+  user-select: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  background-color: var(--my-button-bg-color, #ffffff);
+  border: var(--my-button-border-width, 1px) solid var(--my-button-border-color, #dcdfe6);
+  border-radius: var(--my-button-border-radius, 4px);
+  padding: 8px 15px;
+  font-size: var(--my-button-font-size, 14px);
+
+  &:hover,
+  &:focus {
+    color: var(--my-color-primary, #409eff);
+    border-color: var(--my-color-primary-light-7, #c6e2ff);
+    background-color: var(--my-color-primary-light-9, #ecf5ff);
+  }
+
+  &:active {
+    color: var(--my-color-primary-darken-10, #3a8ee6);
+    border-color: var(--my-color-primary-darken-10, #3a8ee6);
+    outline: none;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  // Size
+  @include m(large) {
+    height: var(--my-button-large-height, 40px);
+    padding: 12px 19px;
+    font-size: var(--my-button-large-font-size, 16px);
+    border-radius: var(--my-button-large-border-radius, 4px);
+  }
+
+  @include m(small) {
+    height: var(--my-button-small-height, 24px);
+    padding: 5px 11px;
+    font-size: var(--my-button-small-font-size, 12px);
+    border-radius: var(--my-button-small-border-radius, 3px);
+  }
+
+  // Type
+  @include m(primary) {
+    color: #fff;
+    background-color: var(--my-color-primary, #409eff);
+    border-color: var(--my-color-primary, #409eff);
+
+    &:hover,
+    &:focus {
+      background-color: var(--my-color-primary-light-3, #79bbff);
+      border-color: var(--my-color-primary-light-3, #79bbff);
+    }
+
+    &:active {
+      background-color: var(--my-color-primary-darken-10, #3a8ee6);
+      border-color: var(--my-color-primary-darken-10, #3a8ee6);
+    }
+  }
+
+  @include m(success) {
+    color: #fff;
+    background-color: var(--my-color-success, #67c23a);
+    border-color: var(--my-color-success, #67c23a);
+
+    &:hover,
+    &:focus {
+      background-color: var(--my-color-success-light-3, #95d475);
+      border-color: var(--my-color-success-light-3, #95d475);
+    }
+
+    &:active {
+      background-color: var(--my-color-success-darken-10, #5daf34);
+      border-color: var(--my-color-success-darken-10, #5daf34);
+    }
+  }
+
+  @include m(warning) {
+    color: #fff;
+    background-color: var(--my-color-warning, #e6a23c);
+    border-color: var(--my-color-warning, #e6a23c);
+
+    &:hover,
+    &:focus {
+      background-color: var(--my-color-warning-light-3, #eebe77);
+      border-color: var(--my-color-warning-light-3, #eebe77);
+    }
+
+    &:active {
+      background-color: var(--my-color-warning-darken-10, #cf9236);
+      border-color: var(--my-color-warning-darken-10, #cf9236);
+    }
+  }
+
+  @include m(danger) {
+    color: #fff;
+    background-color: var(--my-color-danger, #f56c6c);
+    border-color: var(--my-color-danger, #f56c6c);
+
+    &:hover,
+    &:focus {
+      background-color: var(--my-color-danger-light-3, #f89898);
+      border-color: var(--my-color-danger-light-3, #f89898);
+    }
+
+    &:active {
+      background-color: var(--my-color-danger-darken-10, #dd6161);
+      border-color: var(--my-color-danger-darken-10, #dd6161);
+    }
+  }
+
+  @include m(info) {
+    color: #fff;
+    background-color: var(--my-color-info, #909399);
+    border-color: var(--my-color-info, #909399);
+
+    &:hover,
+    &:focus {
+      background-color: var(--my-color-info-light-3, #b1b3b8);
+      border-color: var(--my-color-info-light-3, #b1b3b8);
+    }
+
+    &:active {
+      background-color: var(--my-color-info-darken-10, #82848a);
+      border-color: var(--my-color-info-darken-10, #82848a);
+    }
+  }
+
+  // States
+  @include when(plain) {
+    &.#{$namespace}-button--primary {
+      color: var(--my-color-primary, #409eff);
+      background: var(--my-color-primary-light-9, #ecf5ff);
+      
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: var(--my-color-primary, #409eff);
+      }
+    }
+
+    &.#{$namespace}-button--success {
+      color: var(--my-color-success, #67c23a);
+      background: var(--my-color-success-light-9, #f0f9eb);
+      
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: var(--my-color-success, #67c23a);
+      }
+    }
+
+    &.#{$namespace}-button--warning {
+      color: var(--my-color-warning, #e6a23c);
+      background: var(--my-color-warning-light-9, #fdf6ec);
+      
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: var(--my-color-warning, #e6a23c);
+      }
+    }
+
+    &.#{$namespace}-button--danger {
+      color: var(--my-color-danger, #f56c6c);
+      background: var(--my-color-danger-light-9, #fef0f0);
+      
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: var(--my-color-danger, #f56c6c);
+      }
+    }
+
+    &.#{$namespace}-button--info {
+      color: var(--my-color-info, #909399);
+      background: var(--my-color-info-light-9, #f4f4f5);
+      
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: var(--my-color-info, #909399);
+      }
+    }
+  }
+
+  @include when(round) {
+    border-radius: 20px;
+    padding: 8px 23px;
+  }
+
+  @include when(circle) {
+    border-radius: 50%;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+  }
+
+  @include when(disabled) {
+    cursor: not-allowed;
+    opacity: 0.7;
+    
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      color: #c0c4cc;
+      background-color: #fff;
+      border-color: #e4e7ed;
+    }
+
+    &.#{$namespace}-button--primary,
+    &.#{$namespace}-button--success,
+    &.#{$namespace}-button--warning,
+    &.#{$namespace}-button--danger,
+    &.#{$namespace}-button--info {
+      color: #fff;
+      background-color: var(--my-disabled-bg-color, #c0c4cc);
+      border-color: var(--my-disabled-bg-color, #c0c4cc);
+    }
+    
+    &.is-plain {
+      &,
+      &:hover,
+      &:focus,
+      &:active {
+        color: #c0c4cc;
+        background-color: #fff;
+        border-color: #e4e7ed;
+      }
+    }
+  }
+
+  @include when(loading) {
+    position: relative;
+    pointer-events: none;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      border-radius: inherit;
+      background-color: rgba(255, 255, 255, 0.35);
+    }
+  }
+
+  [class*="my-icon-"] + span {
+    margin-left: 5px;
+  }
+} 

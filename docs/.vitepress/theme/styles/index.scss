@@ -1,0 +1,149 @@
+@import './vars.scss';
+@import './custom.scss';
+
+// Global styles
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--vp-c-text-1);
+}
+
+// Element Plus style overrides
+:root {
+  --el-color-primary: var(--vp-c-brand);
+  --el-color-primary-light-3: var(--vp-c-brand-light);
+  --el-color-primary-light-5: var(--vp-c-brand-lighter);
+  --el-color-primary-dark-2: var(--vp-c-brand-dark);
+}
+
+// Common elements
+.vp-doc {
+  a {
+    color: var(--vp-c-brand);
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.25;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  
+  h1 {
+    font-size: 2.2em;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+  
+  h2 {
+    font-size: 1.65em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--vp-c-divider);
+  }
+  
+  h3 {
+    font-size: 1.35em;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    
+    th, td {
+      padding: 0.6em 1em;
+      border: 1px solid var(--vp-c-divider);
+    }
+    
+    th {
+      background-color: var(--vp-c-bg-soft);
+      font-weight: 600;
+    }
+    
+    tbody tr:hover {
+      background-color: var(--vp-c-bg-soft);
+    }
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--vp-c-brand);
+    padding: 0 0 0 1em;
+    margin: 1em 0;
+    color: var(--vp-c-text-2);
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    background-color: var(--vp-code-block-bg);
+  }
+}
+
+// Language selector
+.VPNav .VPNavBarTranslations {
+  height: 36px;
+  
+  .text {
+    display: none;
+  }
+}
+
+// 导入组件库样式
+@import '../../../../src/styles/index.scss';
+
+// 文档全局样式
+:root {
+  --vp-c-brand: #409eff;
+  --vp-c-brand-light: #79bbff;
+  --vp-c-brand-dark: #337ecc;
+}
+
+// 组件示例样式
+.example {
+  border-radius: 4px;
+  padding: 20px;
+  &.example-button-group {
+    .my-button {
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &.example-tabs {
+    padding-bottom: 30px;
+  }
+}
+
+// API 表格样式
+.api-table {
+  width: 100%;
+  color: var(--vp-c-text-1);
+  font-size: 14px;
+  border-collapse: collapse;
+  
+  th, td {
+    border-bottom: 1px solid var(--vp-c-divider);
+    padding: 12px 8px;
+    text-align: left;
+  }
+
+  th {
+    color: var(--vp-c-text-1);
+    font-weight: 600;
+    white-space: nowrap;
+    background-color: var(--vp-c-bg-soft);
+  }
+} 

@@ -1,0 +1,65 @@
+{
+  "name": "my-ui-lib",
+  "version": "0.1.0",
+  "description": "A Vue 3 UI Component Library",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "docs": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "prepublishOnly": "npm run build",
+    "release": "npm publish"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "dayjs": "^1.11.10",
+    "glob": "^11.0.2",
+    "my-ui-lib": "file:",
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vue-router": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-vue": "^4.5.0",
+    "@vue/test-utils": "^2.4.0",
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-vue": "^9.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.0.0",
+    "prettier": "^3.0.0",
+    "sass": "^1.69.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "vitepress": "^1.0.0",
+    "vitest": "^0.34.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "lint-staged": {
+    "*.{vue,js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss,less,md,json}": [
+      "prettier --write"
+    ]
+  }
+}

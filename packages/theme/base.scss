@@ -1,0 +1,147 @@
+/**
+ * Base styles for the component library
+ */
+
+@use './common/var.scss' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--my-font-family-primary);
+  font-size: var(--my-font-size-base);
+  color: #303133;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--my-color-primary);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: var(--my-color-primary-light-3);
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Reset button styles
+button {
+  border: none;
+  background: none;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+
+// Common transitions
+.my-fade-in-linear-enter-active,
+.my-fade-in-linear-leave-active {
+  transition: opacity 0.2s linear;
+}
+
+.my-fade-in-linear-enter-from,
+.my-fade-in-linear-leave-to {
+  opacity: 0;
+}
+
+.my-fade-in-enter-active,
+.my-fade-in-leave-active {
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.my-fade-in-enter-from,
+.my-fade-in-leave-to {
+  opacity: 0;
+}
+
+.my-zoom-in-center-enter-active,
+.my-zoom-in-center-leave-active {
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.my-zoom-in-center-enter-from,
+.my-zoom-in-center-leave-to {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.my-zoom-in-top-enter-active,
+.my-zoom-in-top-leave-active {
+  opacity: 1;
+  transform: scaleY(1);
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-origin: center top;
+}
+
+.my-zoom-in-top-enter-from,
+.my-zoom-in-top-leave-to {
+  opacity: 0;
+  transform: scaleY(0);
+}
+
+.my-zoom-in-bottom-enter-active,
+.my-zoom-in-bottom-leave-active {
+  opacity: 1;
+  transform: scaleY(1);
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-origin: center bottom;
+}
+
+.my-zoom-in-bottom-enter-from,
+.my-zoom-in-bottom-leave-to {
+  opacity: 0;
+  transform: scaleY(0);
+}
+
+.my-zoom-in-left-enter-active,
+.my-zoom-in-left-leave-active {
+  opacity: 1;
+  transform: scale(1, 1);
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-origin: top left;
+}
+
+.my-zoom-in-left-enter-from,
+.my-zoom-in-left-leave-to {
+  opacity: 0;
+  transform: scale(0.45, 0.45);
+}
+
+.collapse-transition {
+  transition: 0.3s height ease-in-out, 0.3s padding-top ease-in-out,
+    0.3s padding-bottom ease-in-out;
+}
+
+.horizontal-collapse-transition {
+  transition: 0.3s width ease-in-out, 0.3s padding-left ease-in-out,
+    0.3s padding-right ease-in-out;
+}
+
+.my-list-enter-active,
+.my-list-leave-active {
+  transition: all 1s;
+}
+
+.my-list-enter-from,
+.my-list-leave-to {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.my-opacity-transition {
+  transition: opacity 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+} 

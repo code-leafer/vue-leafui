@@ -1,0 +1,37 @@
+@use '@theme/common/var.scss' as *;
+@use '@theme/mixins/mixins.scss' as *;
+
+@include b(icon) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: var(--my-font-size-base, 14px);
+  color: inherit;
+  transition: all .2s cubic-bezier(.645, .045, .355, 1);
+
+  &--small {
+    font-size: var(--my-font-size-small, 12px);
+  }
+
+  &--medium {
+    font-size: var(--my-font-size-base, 14px);
+  }
+
+  &--large {
+    font-size: var(--my-font-size-large, 18px);
+  }
+
+  @include when(spinning) {
+    animation: rotating 2s linear infinite;
+  }
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 

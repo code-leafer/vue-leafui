@@ -1,0 +1,124 @@
+/**
+ * CSS Variables used by the components
+ */
+
+@use 'sass:map';
+
+// Color system
+$colors: () !default;
+$colors: map.merge(
+  (
+    'white': #ffffff,
+    'black': #000000,
+    'primary': (
+      'base': #409eff,
+    ),
+    'success': (
+      'base': #67c23a,
+    ),
+    'warning': (
+      'base': #e6a23c,
+    ),
+    'danger': (
+      'base': #f56c6c,
+    ),
+    'error': (
+      'base': #f56c6c,
+    ),
+    'info': (
+      'base': #909399,
+    ),
+  ),
+  $colors
+);
+
+// Typography
+$font-family: (
+  'primary': 'Helvetica Neue, Helvetica, Arial, sans-serif',
+);
+
+$font-size: (
+  'extra-large': 20px,
+  'large': 18px,
+  'medium': 16px,
+  'base': 14px,
+  'small': 13px,
+  'extra-small': 12px,
+);
+
+// Border
+$border-radius: (
+  'base': 4px,
+  'small': 2px,
+  'round': 20px,
+  'circle': 100%,
+);
+
+$border-width: (
+  'base': 1px,
+  'medium': 2px,
+  'thick': 3px,
+);
+
+// Component variables
+// Button
+$button: () !default;
+$button: map.merge(
+  (
+    'font-weight': 500,
+    'border-color': #dcdfe6,
+    'bg-color': #ffffff,
+    'text-color': #606266,
+    'disabled-bg-color': #c0c4cc,
+    'disabled-text-color': #ffffff,
+    'height': 32px,
+    'font-size': map.get($font-size, 'base'),
+    'border-radius': map.get($border-radius, 'base'),
+    'large-height': 40px,
+    'large-font-size': map.get($font-size, 'medium'),
+    'small-height': 24px,
+    'small-font-size': map.get($font-size, 'extra-small'),
+  ),
+  $button
+);
+
+// Generate CSS variables
+:root {
+  // Color variables
+  @each $type, $value in $colors {
+    @if $type == 'primary' or $type == 'success' or $type == 'warning' or $type == 'danger' or $type == 'error' or $type == 'info' {
+      --my-color-#{$type}: #{map.get($value, 'base')};
+      
+      // Light and dark variants
+      @for $i from 1 through 9 {
+        --my-color-#{$type}-light-#{$i}: mix(#ffffff, #{map.get($value, 'base')}, $i * 10%);
+      }
+      --my-color-#{$type}-darken-10: darken(#{map.get($value, 'base')}, 10%);
+    } @else {
+      --my-color-#{$type}: #{$value};
+    }
+  }
+
+  // Typography variables
+  @each $type, $value in $font-family {
+    --my-font-family-#{$type}: #{$value};
+  }
+
+  @each $type, $value in $font-size {
+    --my-font-size-#{$type}: #{$value};
+  }
+
+  // Border variables
+  @each $type, $value in $border-radius {
+    --my-border-radius-#{$type}: #{$value};
+  }
+
+  @each $type, $value in $border-width {
+    --my-border-width-#{$type}: #{$value};
+  }
+
+  // Component variables - Button
+  @each $key, $value in $button {
+    --my-button-#{$key}: #{$value};
+  }
+} 

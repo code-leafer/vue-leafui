@@ -1,0 +1,50 @@
+/**
+ * Mixins for component styles
+ */
+
+// Import common variables
+@use '../common/var.scss' as *;
+
+// Define the namespace for all components
+$namespace: 'my' !default;
+$common-separator: '-' !default;
+$element-separator: '__' !default;
+$modifier-separator: '--' !default;
+$state-prefix: 'is-' !default;
+
+// Block - for main component class
+@mixin b($block) {
+  $B: #{$namespace + $common-separator + $block};
+  .#{$B} {
+    @content;
+  }
+}
+
+// Element - for component nested elements
+@mixin e($element) {
+  $E: #{$element-separator + $element};
+  @at-root {
+    #{& + $E} {
+      @content;
+    }
+  }
+}
+
+// Modifier - for state variations
+@mixin m($modifier) {
+  $M: #{$modifier-separator + $modifier};
+  @at-root {
+    #{& + $M} {
+      @content;
+    }
+  }
+}
+
+// When - for state conditionals
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+} 

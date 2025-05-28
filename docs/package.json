@@ -1,0 +1,47 @@
+{
+  "name": "my-ui-docs",
+  "version": "1.0.0",
+  "description": "My UI 组件库文档",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev .",
+    "build": "vitepress build .",
+    "serve": "vitepress serve . --port 5001",
+    "gen-locale": "node --loader ts-node/esm .vitepress/build/locale-generate.ts"
+  },
+  "dependencies": {
+    "@docsearch/js": "^3.1.0",
+    "@vueuse/core": "^9.1.0",
+    "clipboard-copy": "^4.0.1",
+    "my-ui-docs": "file:",
+    "normalize.css": "^8.0.1",
+    "nprogress": "^0.2.0",
+    "vue": "^3.3.0"
+  },
+  "devDependencies": {
+    "@docsearch/react": "^3.1.0",
+    "@iconify-json/ri": "^1.1.3",
+    "@mdit-vue/shared": "^2.1.3",
+    "@types/escape-html": "^1.0.0",
+    "@types/markdown-it": "^12.2.3",
+    "@types/markdown-it-container": "^2.0.5",
+    "@types/node": "^18.0.0",
+    "@types/prismjs": "^1.26.0",
+    "@vitejs/plugin-vue-jsx": "^4.0.1",
+    "chalk": "^4.1.2",
+    "escape-html": "^1.0.3",
+    "fast-glob": "^3.2.11",
+    "markdown-it": "^13.0.1",
+    "markdown-it-container": "^3.0.0",
+    "prismjs": "^1.29.0",
+    "rimraf": "^5.0.5",
+    "sass": "^1.62.1",
+    "ts-node": "^10.9.1",
+    "tsx": "^4.7.0",
+    "unocss": "^0.58.3",
+    "unplugin-icons": "^0.14.15",
+    "unplugin-vue-components": "^0.26.0",
+    "vitepress": "^1.0.0-rc.40",
+    "vue-template-compiler": "^2.7.14"
+  }
+}
